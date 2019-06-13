@@ -1,0 +1,65 @@
+stages:
+  - build
+  - test
+  - deploy
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+build_site:
+  image: node:10.16.0
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - public
+
+test_site:
+  image: node:10.16.0
+  stage: test
+  script:
+    - npm run test
+
+deploy_staging:
+  image: python:latest
+  stage: deploy
+  script:
+    - pip install awscli
+    - aws s3 sync public/ s3://dev.eatdrinkrva.com/ --delete
+  environment:
+    name: staging
+    url: http://dev.eatdrinkrva.com
+  except:
+   - master
+   - tags
+
+deploy_QA:
+  image: python:latest
+  stage: deploy
+  script:
+    - pip install awscli
+    - aws s3 sync public/ s3://qa.eatdrinkrva.com/ --delete
+  environment:
+    name: QA
+    url: http://qa.eatdrinkrva.com
+  only:
+    - master
+
+deploy_production:
+  image: python:latest
+  stage: deploy
+  script:
+    - pip install awscli
+    - aws s3 sync public/ s3://eatdrinkrva.com/ --delete
+  environment:
+    name: production
+    url: https://eatdrinkrva.com
+  only:
+    - tags
+    
