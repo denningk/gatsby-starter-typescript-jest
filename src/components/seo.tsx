@@ -79,16 +79,16 @@ SEO.defaultProps = {
 interface SEOProps {
   description?: string
   lang?: string
-  meta?: Array<metaWithProperty> | Array<metaWithName>
+  meta?: MetaWithProperty[] | MetaWithName[]
   title: string
 }
 
-interface metaWithProperty {
+interface MetaWithProperty {
   property: string
   content: string
 }
 
-interface metaWithName {
+interface MetaWithName {
   name: string
   content: string
 }

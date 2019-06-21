@@ -3,12 +3,24 @@ stages:
   - test
   - deploy
 
-# This folder is cached between builds
-# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - node_modules/
+build_staging:
+  image: node:10.16.0
+  stage: build
+  script:
+    - npm install
+    - npm run type-check
+    - npm run lint
+    - npm run build
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - public
+  except:
+    - master
+    - tags
 
 build_site:
   image: node:10.16.0
@@ -16,15 +28,26 @@ build_site:
   script:
     - npm install
     - npm run build
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
   artifacts:
     paths:
       - public
+  only:
+    - master
+    - tags
 
 test_site:
   image: node:10.16.0
   stage: test
   script:
     - npm run test
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
 
 deploy_staging:
   image: python:latest

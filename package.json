@@ -1,13 +1,14 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "eatdrinkrva",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Keith Denning <keithdenning1@gmail.com>",
   "dependencies": {
-    "@types/react-helmet": "^5.0.8",
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
+    "@types/react-helmet": "^5.0.8",
+    "@types/react-test-renderer": "^16.8.2",
     "gatsby": "^2.6.0",
     "gatsby-image": "^2.1.0",
     "gatsby-plugin-manifest": "^2.1.1",
@@ -23,15 +24,22 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.14",
     "@types/node": "^12.0.2",
-    "@typescript-eslint/eslint-plugin": "^1.9.0",
-    "@typescript-eslint/parser": "^1.9.0",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "babel-jest": "^24.8.0",
+    "babel-preset-gatsby": "^0.1.11",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
     "prettier": "^1.17.1",
-    "typescript": "^3.4.5"
+    "react-test-renderer": "^16.8.6",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.2"
   },
   "keywords": [
     "gatsby"
@@ -43,9 +51,9 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "test": "jest",
     "type-check": "tsc --noEmit",
-    "lint": "eslint ./src/"
+    "lint": "eslint **/*.tsx"
   },
   "repository": {
     "type": "git",
