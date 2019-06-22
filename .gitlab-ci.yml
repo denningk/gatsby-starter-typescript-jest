@@ -4,7 +4,7 @@ stages:
   - deploy
 
 build_staging:
-  image: node:10.16.0
+  image: node:lts
   stage: build
   script:
     - npm install
@@ -23,7 +23,7 @@ build_staging:
     - tags
 
 build_site:
-  image: node:10.16.0
+  image: node:lts
   stage: build
   script:
     - npm install
@@ -40,7 +40,7 @@ build_site:
     - tags
 
 test_site:
-  image: node:10.16.0
+  image: node:lts
   stage: test
   script:
     - npm run test
@@ -54,7 +54,7 @@ deploy_staging:
   stage: deploy
   script:
     - pip install awscli
-    - aws s3 sync public/ s3://dev.eatdrinkrva.com/ --delete
+    - aws s3 sync public/ s3://<DEV_BUCKET_NAME>/ --delete
   environment:
     name: staging
     url: http://dev.eatdrinkrva.com
@@ -67,7 +67,7 @@ deploy_QA:
   stage: deploy
   script:
     - pip install awscli
-    - aws s3 sync public/ s3://qa.eatdrinkrva.com/ --delete
+    - aws s3 sync public/ s3://<QA_BUCKET_NAME>.com/ --delete
   environment:
     name: QA
     url: http://qa.eatdrinkrva.com
@@ -79,7 +79,7 @@ deploy_production:
   stage: deploy
   script:
     - pip install awscli
-    - aws s3 sync public/ s3://eatdrinkrva.com/ --delete
+    - aws s3 sync public/ s3://<PROD_BUCKET_NAME>/ --delete
   environment:
     name: production
     url: https://eatdrinkrva.com

@@ -1,5 +1,5 @@
 {
-  "name": "eatdrinkrva",
+  "name": "gatsby-starter-typescript-jest",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
@@ -57,7 +57,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/denningk/gatsby-starter-typescript-jest"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
