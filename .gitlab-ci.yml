@@ -57,7 +57,7 @@ deploy_staging:
     - aws s3 sync public/ s3://<DEV_BUCKET_NAME>/ --delete
   environment:
     name: staging
-    url: http://dev.eatdrinkrva.com
+    url: http://<DEV_BUCKET_NAME>
   except:
    - master
    - tags
@@ -70,7 +70,7 @@ deploy_QA:
     - aws s3 sync public/ s3://<QA_BUCKET_NAME>.com/ --delete
   environment:
     name: QA
-    url: http://qa.eatdrinkrva.com
+    url: http://<QA_BUCKET_NAME>
   only:
     - master
 
@@ -82,7 +82,7 @@ deploy_production:
     - aws s3 sync public/ s3://<PROD_BUCKET_NAME>/ --delete
   environment:
     name: production
-    url: https://eatdrinkrva.com
+    url: https://<PROD_BUCKET_NAME>
   only:
     - tags
-    
+
