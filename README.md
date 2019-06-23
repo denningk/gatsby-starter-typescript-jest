@@ -8,7 +8,7 @@
   Gatsby's Typescript Jest Starter
 </h1>
 
-Barebones Gatsby starter with Typescript, Jest, and other useful configurations. A [detailed guide](#-deploying-your-gatsby-site-to-an-S3-Bucket) on how to deploy your Gatsby site to AWS S3 buckets (manually and automatically) can be found in this readme.
+Barebones Gatsby starter with Typescript, Jest, and other useful configurations. A [detailed guide](#deploying-your-gatsby-site-to-an-S3-Bucket) on how to deploy your Gatsby site to AWS S3 buckets (manually and automatically) can be found in this readme.
 
 This starter includes configurations for Typescript, Jest (ts-jest), EditorConfig, ESLint, Prettier, GitHub pull request templates, and even Gitlab-CI. Enjoy!
 
@@ -22,7 +22,7 @@ In addition to [Gatsby's recommended pre-requisites](https://www.gatsbyjs.org/tu
   - [ESLint](https://eslint.org/)
 - Use [Visual Studio Code](https://code.visualstudio.com/) or another IDE which supports these extensions
 
-If you plan to use GitLab-CI as your CI tool, see [Deploying Your Gatsby Site to an S3 Bucket](#-deploying-your-gatsby-site-to-an-s3-bucket).
+If you plan to use GitLab-CI as your CI tool, see [Deploying Your Gatsby Site to an S3 Bucket](#deploying-your-gatsby-site-to-an-s3-bucket).
 
 ## Getting Started
 
@@ -201,7 +201,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-1.  **`.gitlab-ci.yml`**: This is a configuration file for deploying your site with [Gitlab-CI](https://about.gitlab.com/product/continuous-integration/). This YAML file details stages for building, testing, and deploying your Gatsby site to an AWS S3 bucket using Gitlab-CI. See [Deploying Your Gatsby Site to an S3 Bucket](#-deploying-your-gatsby-site-to-an-s3-bucket) for more info.
+1.  **`.gitlab-ci.yml`**: This is a configuration file for deploying your site with [Gitlab-CI](https://about.gitlab.com/product/continuous-integration/). This YAML file details stages for building, testing, and deploying your Gatsby site to an AWS S3 bucket using Gitlab-CI. See [Deploying Your Gatsby Site to an S3 Bucket](#deploying-your-gatsby-site-to-an-s3-bucket) for more info.
 
 1.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
