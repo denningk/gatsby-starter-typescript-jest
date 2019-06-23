@@ -201,7 +201,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-1.  **`.gitlab-ci.yml`**: This is a configuration file for deploying your site with [Gitlab-CI](https://about.gitlab.com/product/continuous-integration/). This YAML file details stages for building, testing, and deploying your Gatsby site to an AWS S3 bucket using Gitlab-CI. See [Deploying Your Gatsby Site to an S3 Bucket](#deploying-your-gatsby-site-to-an-s3-bucket) for more info.
+1.  **`.gitlab-ci.yml`**: This file is **optional**. It should be deleted if you are not going to be using GitLab-CI for automated deployments. This is a configuration file for deploying your site with [Gitlab-CI](https://about.gitlab.com/product/continuous-integration/). This YAML file details stages for building, testing, and deploying your Gatsby site to an AWS S3 bucket using Gitlab-CI. See [Deploying Your Gatsby Site to an S3 Bucket](#deploying-your-gatsby-site-to-an-s3-bucket) for more info.
 
 1.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
